@@ -1,5 +1,15 @@
 Sauce for Zwift™
 ===========
+
+While this version does not require a patreon subscription I urge you to support the author, sauce is a very nice piece of software.
+
+Support [mayfiled](https://github.com/mayfield)
+--------
+<a href="https://www.patreon.com/bePatron?u=32064618" target="_blank">
+    <img src="pages/images/become_a_patron_button@2x.png" width="150"/>
+</a>
+
+
 ![Sauce](pages/images/logo_horiz_320x120.png)
 #### A collection of add-ons and replacement widgets for Zwift
 Sauce for Zwift™ extends the zwift cycling and running simulator with more stats and
