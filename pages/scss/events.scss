@@ -6,7 +6,7 @@ html {
     font-size: 4.1mm;
 
     @media (max-width: 768px) and (min-width: 375px) {
-        font-size: 4.8mm;
+        font-size: 4.7mm;
     }
 }
 
@@ -403,6 +403,7 @@ table {
                 border-radius: 0.28em;
                 padding: 1em;
                 color: color.get(intrinsic);
+                font-size: 0.95em;
 
                 > *:not(:last-child) {
                     margin-right: 0.5rem;
@@ -458,7 +459,7 @@ table {
                 }
 
                 .name {
-                    font-weight: 600;
+                    font-weight: 500;
                 }
             }
         }
@@ -530,11 +531,11 @@ table {
                     // It should be carefully balanced with the size of other non max-width-hacked cols.
                     &.name {
                         max-width: 0; // hack to enable container % width
-                        width: 40%; // must be coupled with max-width:0
+                        width: 30%; // must be coupled with max-width:0
                     }
                     &.team {
                         max-width: 0; // hack to enable container % width
-                        width: 20%; // must be coupled with max-width:0
+                        width: 10%; // must be coupled with max-width:0
                     }
                     // end hack
 
@@ -681,6 +682,13 @@ table {
 
         img.event-image {
             width: 100%;
+        }
+
+        .meta,
+        .elevation-chart {
+            // Fix for .desc flow breaking pointer events..
+            position: relative;
+            z-index: 1;
         }
 
         .meta {
@@ -844,6 +852,7 @@ table {
                         &.summary > td {
                             --name-width: 55%;
                             --row-padding: 0.7em;
+                            font-variant-numeric: normal;
                             padding: var(--row-padding) var(--cell-padding);
 
                             &:empty {
@@ -872,15 +881,6 @@ table {
                                 padding-top: 0.5em;
                                 padding-bottom: 0;
                                 max-width: none;
-                            }
-
-                            &.place {
-                                order: -3;
-                                font-weight: 700;
-                                font-size: 1.2em;
-                                width: var(--place-width);
-                                margin-bottom: -0.4em;
-                                overflow: visible;
                             }
 
                             &.name {
@@ -924,9 +924,19 @@ table {
                     }
 
                     &.results {
-                        --place-width: 3rem;
+                        --place-width: 2.6rem;
 
                         > tbody > tr.summary > td {
+                            &.place {
+                                order: -3;
+                                text-align: left;
+                                font-weight: 600;
+                                font-size: 1em;
+                                width: var(--place-width);
+                                margin-bottom: -0.4em;
+                                overflow: visible;
+                            }
+
                             &.racing-score,
                             &.time, // or distance
                             &.distance, // or time
@@ -941,9 +951,14 @@ table {
                             &.crit-power,
                             &.hr,
                             &.weight {
+                                min-width: 3ch;
                                 font-size: 0.88em;
                             }
 
+                            abbr.unit {
+                                font-stretch: 90%;
+                                font-size: 0.7em;
+                            }
                         }
                     }
                 }
